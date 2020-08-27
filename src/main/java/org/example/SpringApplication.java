@@ -13,9 +13,10 @@ public class SpringApplication {
         // Market market = new Market(new Mouse());   Default
 
         // DI
-        Market market = context.getBean("market", Market.class);
+        Item item = context.getBean("mouse", Item.class);
+        Market market = new Market(item);
         market.sellItem();
-        System.out.println(market.getTax());
+
 
         context.close();
     }

@@ -9,7 +9,9 @@ public class Market {
     public Market(Item item){
         this.item=item;
     }
-    public Market(){ }
+    public Market(){
+
+    }
 
     public void sellItem() {
         System.out.println("Sold " + item.getItemName());

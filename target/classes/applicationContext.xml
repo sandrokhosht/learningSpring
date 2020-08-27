@@ -9,14 +9,8 @@
 
         <context:property-placeholder location="classpath:market.properties"/>
 
-    <bean id="itemBean"
-          class="org.example.Mouse">
-    </bean>
+        <context:component-scan base-package="org.example"/>
 
-    <bean id="market"
-          class="org.example.Market">
-        <property name="item" ref="itemBean"/>
-        <property name="tax" value="${market.tax}"/>
-    </bean>
+
 
 </beans>
