@@ -1,11 +1,17 @@
 package org.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Market {
 
+    @Autowired
     private Item item;
+
     private int tax;
 
-    // IoC
+
     public Market(Item item){
         this.item=item;
     }
@@ -13,13 +19,16 @@ public class Market {
 
     }
 
-    public void sellItem() {
-        System.out.println("Sold " + item.getItemName());
-    }
 
     public void setItem(Item item) {
         this.item = item;
     }
+
+    public String sellItem() {
+        return "Sold - " + item.getItemName();
+    }
+
+
 
     public int getTax() {
         return tax;
