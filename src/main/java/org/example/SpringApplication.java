@@ -9,13 +9,7 @@ public class SpringApplication {
         );
 
 
-
-        // Market market = new Market(new Mouse());   Default
-
-        // DI
-      //  Market market = context.getBean("market", Market.class);
-
-        Company company= context.getBean("company",Company.class);
+        Company company = context.getBean("company",Company.class);
 
         System.out.println(company);
 

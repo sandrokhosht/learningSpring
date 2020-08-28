@@ -1,40 +1,30 @@
 package org.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Market {
+    private Item item1;
+    private Item item2;
+
 
     @Autowired
-    private Item item;
-
-    private int tax;
-
-
-    public Market(Item item){
-        this.item=item;
-    }
-    public Market(){
-
+    public Market(@Qualifier("keyboard") Item item1, @Qualifier("mouse") Item item2){
+        this.item1=item1;
+        this.item2=item2;
     }
 
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
+
+
 
     public String sellItem() {
-        return "Sold - " + item.getItemName();
+        return "Sold - " + item1.getItemName() + " and " + item2.getItemName();
     }
 
 
 
-    public int getTax() {
-        return tax;
-    }
 
-    public void setTax(int tax) {
-        this.tax = tax;
-    }
 }
