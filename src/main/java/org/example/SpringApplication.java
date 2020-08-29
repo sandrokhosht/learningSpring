@@ -9,9 +9,20 @@ public class SpringApplication {
         );
 
 
-        Company company = context.getBean("company",Company.class);
+       /* Company company = context.getBean("company",Company.class);
 
-        System.out.println(company);
+        System.out.println(company);*/
+
+        Market market = context.getBean("market",Market.class);
+
+        System.out.println(market.getTax() + "%");
+
+        Market market1 = context.getBean("market",Market.class);
+        Market market2 = context.getBean("market",Market.class);
+
+
+
+        System.out.println(market1==market2);
 
 
         context.close();
